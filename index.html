@@ -1,10 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Care</title>
+  <style>
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background:linear-gradient(135deg,#1b4db8,#00a6b8);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+    .card{
+      background:#fff;
+      width:340px;
+      border-radius:20px;
+      padding:30px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.2);
+    }
+    h1{color:#1b2a4a;}
+    .btn{
+      display:block;
+      margin:15px 0;
+      padding:15px;
+      border-radius:12px;
+      color:#fff;
+      text-decoration:none;
+      font-weight:bold;
+    }
+    .call{background:#16a34a;}
+    .whatsapp{background:#22c55e;}
+    .telegram{background:#2563eb;}
+  </style>
 </head>
 <body>
-  <h1>Welcome to My Website</h1>
-  <p>Website successfully created!</p>
+
+<div class="card">
+  <h1>💎 Customer Care</h1>
+  <p>Premium Customer Care Support</p>
+
+  <a class="btn call" href="tel:+911234567890">📞 CALL SUPPORT</a>
+
+  <a class="btn whatsapp" href="https://wa.me/911234567890">💬 WHATSAPP SUPPORT</a>
+
+  <a class="btn telegram" href="https://t.me/yourusername">✈️ SUBMIT REQUEST</a>
+
+  <p style="color:green;font-weight:bold;">🟢 Support Team Online</p>
+</div>
+
 </body>
 </html>
