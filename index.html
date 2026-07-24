@@ -47,10 +47,43 @@
 
   <a class="btn whatsapp" href="https://wa.me/916375610535">💬 WHATSAPP SUPPORT</a>
 
-  <a class="btn telegram" href="https://t.me/juned3282">✈️ SUBMIT REQUEST</a>
+  <a class="btn telegram" href="#" onclick="sendTelegramMessage(); return false;">✈️ SUBMIT REQUEST</a>
 
   <p style="color:green;font-weight:bold;">🟢 Support Team Online</p>
 </div>
+<script>
+const BOT_TOKEN = "YOUR_BOT_TOKEN";
+const CHAT_ID = "8963591045";
 
+async function sendTelegramMessage() {
+  const message = `🔔 New Support Request
+
+Time: ${new Date().toLocaleString()}`;
+
+  try {
+    const response = await fetch(
+      `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: message
+        })
+      }
+    );
+
+    if (response.ok) {
+      alert("Request submitted successfully!");
+    } else {
+      alert("Failed to send request.");
+    }
+  } catch (error) {
+    alert("Network error.");
+  }
+}
+</script>
 </body>
 </html>
