@@ -1,1 +1,30 @@
+/* Call Button - Blue */
+.call-btn {
+    background-color: #007bff; /* Bright Blue */
+    color: #ffffff;
+}
 
+.call-btn:hover {
+    background-color: #0056b3; /* Dark Blue on Hover */
+}
+
+/* WhatsApp Button - Green */
+.whatsapp-btn {
+    background-color: #25D366; /* WhatsApp Green */
+    color: #ffffff;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebc57; /* Dark Green on Hover */
+}
+
+/* Submit Button - Blue */
+.submit-btn {
+    background-color: #007bff; /* Bright Blue */
+    color: #ffffff;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3; /* Dark Blue on Hover */
+}
