@@ -1,3 +1,24 @@
+/* General Button Styling (Bada Size) */
+.btn {
+    padding: 16px 28px;        /* Button ki height aur width badhane ke liye */
+    font-size: 18px;           /* Text ka size bada karne ke liye */
+    font-weight: 700;          /* Text ko extra bold karne ke liye */
+    border-radius: 12px;       /* Rounded corners */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;                 /* Icon aur text ke beech space */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Button ke andhar ke Icon ko bada karne ke liye */
+.btn i {
+    font-size: 22px;
+}
+
 /* Call Button - Blue */
 .call-btn {
     background-color: #007bff; /* Bright Blue */
@@ -6,6 +27,7 @@
 
 .call-btn:hover {
     background-color: #0056b3; /* Dark Blue on Hover */
+    transform: translateY(-2px);
 }
 
 /* WhatsApp Button - Green */
@@ -16,6 +38,7 @@
 
 .whatsapp-btn:hover {
     background-color: #1ebc57; /* Dark Green on Hover */
+    transform: translateY(-2px);
 }
 
 /* Submit Button - Blue */
@@ -23,8 +46,10 @@
     background-color: #007bff; /* Bright Blue */
     color: #ffffff;
     width: 100%;
+    margin-top: 15px;
 }
 
 .submit-btn:hover {
     background-color: #0056b3; /* Dark Blue on Hover */
+    transform: translateY(-2px);
 }
