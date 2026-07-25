@@ -1,62 +1,151 @@
-/* ===== Modern Button Style ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e3a8a, #0d9488);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo {
+    font-size: 50px;
+    margin-bottom: 10px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+h1 {
+    margin: 5px 0;
+    color: #1e293b;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* बटन की कॉमन स्टाइल */
 .btn {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    width: 100%;
-    padding: 15px;
-    margin: 16px 0;
-    border: none;
-    border-radius: 16px;
     text-decoration: none;
-    color: #fff;
-    font-size: 16px;
+    padding: 14px;
+    border-radius: 12px;
+    margin: 14px 0;
     font-weight: 600;
+    font-size: 15px;
     letter-spacing: 0.5px;
-    transition: all 0.35s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
-    overflow: hidden;
-    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .btn i {
-    font-size: 20px;
+    font-size: 18px;
 }
 
-/* Shine Effect */
-.btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -120%;
-    width: 60%;
-    height: 100%;
-    background: rgba(255,255,255,0.3);
-    transform: skewX(-25deg);
-    transition: 0.6s;
-}
-
-.btn:hover::before {
-    left: 130%;
-}
-
-.btn:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-}
-
-/* 📞 Call Button */
+/* 🟢 Call Button Style */
 .call {
-    background: linear-gradient(135deg, #ff9800, #ff5722);
+    background: #16a34a !important;
+    color: #ffffff !important;
+}
+.call:hover {
+    background: #15803d !important;
+    transform: translateY(-2px);
 }
 
-/* 💬 WhatsApp Button */
+/* 🟢 WhatsApp Button Style */
 .whatsapp {
-    background: linear-gradient(135deg, #00c853, #1de9b6);
+    background: #25D366 !important;
+    color: #ffffff !important;
+}
+.whatsapp:hover {
+    background: #20ba5a !important;
+    transform: translateY(-2px);
 }
 
-/* ✈ Telegram Button */
+/* 🔵 Telegram / Request Button Style */
 .telegram {
-    background: linear-gradient(135deg, #2196f3, #3f51b5);
+    background: #2563eb !important;
+    color: #ffffff !important;
+}
+.telegram:hover {
+    background: #1d4ed8 !important;
+    transform: translateY(-2px);
+}
+
+/* स्टेटस इंडिकेटर */
+.status {
+    background: #f0fdf4;
+    color: #16a34a;
+    padding: 8px 16px;
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 15px;
+    border: 1px solid #bbf7d0;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+/* --- Request Page (Form) Inputs Style --- */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+input:focus, textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+p a {
+    color: #64748b;
+    text-decoration: none;
+    font-size: 14px;
+}
+p a:hover {
+    color: #2563eb;
 }
